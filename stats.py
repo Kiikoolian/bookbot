@@ -23,7 +23,9 @@ def get_num_letters(book):
         else:
             num_letters[ltr] = 1
 
-
+    #.items returns a liste of tuples (double entry tabs ex: ( [5][33] , [54][45] ) )
+    # key=lambda item: item[1] , Each item is a tuple like ('e', 5), item[0] is the key ('e') and item[1] is the value (5)
+    # So lambda item: item[1] tells Python: "When you're sorting, use the value part of each (key, value) pair." here Lambda can me we dont care about key , we want the value to be treated
     sorted_letters = dict(sorted(num_letters.items(), key=lambda item: item[1], reverse=True))
     return sorted_letters
 
